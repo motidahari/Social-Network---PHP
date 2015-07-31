@@ -10,7 +10,7 @@ require_once dirname(__FILE__) . '/../lib/DB.class.php';
 		public function __construct(){
 			$this->_db = DB::getResource();
 		}
-		
+		bg bg 
 		public function getAllBlocks(){
 			$result = $this->_db->query("SELECT * from blocks user_id = '" .  $id ."'");
 			$blocks = array();
