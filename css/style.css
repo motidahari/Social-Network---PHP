@@ -1,5 +1,14 @@
 body { margin: 0px; font-family: arial, helvetica, sans-serif; font-weight: lighter; background-color: #F2F2F2; }
 a {text-decoration: none; color: grey;}
+
+/*like & comment*/
+
+.comment { margin-left: 15px; margin-top: 6px  }
+.like { margin-left: 15px; }
+.headlinePost { padding-top:10px; border-top: 1px solid #E6E6E6; margin-top:-10px; margin-left:7px; margin-right:12px; }
+.mainComment{ border:1px solid #E6E6E6; padding: 7px; background-color: #f6f7f8; }
+.howMuchLike { font-size: 10px; margin-bottom:10px;  }
+
 #clearFix{ 
 	background-color: #455d9d; 
 	width:100%; 
@@ -7,6 +16,7 @@ a {text-decoration: none; color: grey;}
 	border-bottom: 1px solid #1e3368; 
 	position:fixed;
 }
+
 #clearFix #clearCenter{
 	width: 990px;
 	margin-right: auto;
@@ -107,15 +117,15 @@ a {text-decoration: none; color: grey;}
 #stat #statPost{ line-height:28px; float: right; padding-right:5px;}
 #stat #statPost input { background-color: #455d9d; color: #fff; border: none; height: 22px; }
 
-.posts .postDetails { padding-left:5px; background-color: #fff;  border: 1px solid #333; margin-bottom: 20px;}
+.posts .postDetails {  padding-left:5px; padding: 2px; background-color: #fff;  border: 1px solid #333; margin-bottom: 20px;}
 
 .posts .postDetails img { float: left; padding: 8px 5px 0 0; height: 50px; width: 50px;   }
 
-.postDetails p a { color: blue; text-decoration: none; }
+.postDetails p a { color: #3b5998; text-decoration: none; }
 .postDetails span { font-size:11px; color: grey; }
 .thePost {float: left;}
 
-.deletePost {float: right; margin: 5px 5px ; width:15px; height:15px; color: #333; background-color: #f3f3f3; }
+.deletePost {float: right; margin: 5px 5px ; width:8px; height:15px; color: #333; background-color: #f3f3f3; }
 
 .rightSec{ width:250px; float:right; }
 .rightSec section {margin-bottom: 12px; border:1px solid #333; min-height:90px; background-color: #fff; font-size:13px;}
@@ -134,10 +144,135 @@ a {text-decoration: none; color: grey;}
 .loadMore input[type="button"] { background-color: #f3f3f3; color: #333; border: none; height: 22px; border:1px solid #3d3d3d;}
 
 /* profile.html */
-.posts .postDetails  .comment { min-height:50px; }
-.posts .postDetails .comment img { height:34px; width:34px; float: left; padding:0px 5px 0px 0px;}
-.posts .postDetails .comment input { width: 630px;  float: left; padding:8px;} 
+.posts .postDetails  .comment { min-height:65px; }
+.posts .postDetails .comment img { margin-top: 10px; height:34px; width:34px; float: left; padding:0px 5px 0px 0px;}
+.posts .postDetails .comment input { width: 585px;  float: left; padding:8px; margin-top:10px;} 
 
-#cover { width:990px; height:205px; background: url(../img/cover.jpg) center center no-repeat; margin-bottom:40px; }
+#cover { width:990px; height:208px; background: url(../img/cover.jpg) center center no-repeat; margin-bottom:40px; }
 #profilePic {width: 130px; height: 130px; float: left; margin-top: 75px;}
+.imgProfil {width: 130px; height: 130px; float: left; border: 3px solid white;}
+.profileName { margin-left: 15px; font-size: 20px; color: white; }
+
 #nameNextProfilePic { float: left; height:20px; margin-top: 180px; margin-left: 5px; display: block; }
+
+/*setting.html*/
+
+#formSetting .Top
+{
+	margin-top: 30px;
+	margin-left: 255px;
+	border:1px solid #333;
+	min-height:90px;
+	background-color: #fff;
+	font-size:13px;
+	width: 800px;
+	height: 585px;
+ }
+ 
+ #formSetting .headline
+ {
+	
+	padding:13px;
+	background-color:#f3f3f3;
+	font-weight: 900;
+ 
+ }
+ 
+ 
+#formSetting .TopP
+{
+	font-size: 25px;
+	border-bottom: 1px solid #333;
+	padding-left:10px;
+}
+
+#formSetting span
+{
+	font-size: 10px;
+	margin-left: 55px;
+    padding: 34px;
+    margin: 55px;  
+}
+
+#formSetting label
+{
+	margin-left: 20px;
+	margin-right: 2px;
+}
+ 
+ 
+#TopSpan 
+{
+	font-weight: lighter;
+}
+
+#formSetting .input1
+
+ {
+	width: 230px;
+	height: 23px;
+}
+ 
+.aboutMe
+{
+	margin-bottom:10px;
+} 
+ 
+ #formSetting .about
+{
+	width: 350px;
+	height: 120px;
+	margin-left: 83px;
+} 
+
+#headLineSubmit
+{
+	border-top: 2px solid #E6E6E6;
+}
+
+#submit 
+{
+	width: 109px;
+	margin-left: 86px;
+	margin-top: 10px;
+}
+
+.bottom
+{
+	margin-top: -586px;
+	margin-right: 130px;
+	border:1px solid #333;
+	background-color: #fff;
+	font-size:13px;
+	width: 300px;
+	height: 190px;
+	float:right;
+}
+
+ #formSetting .headline2
+ {
+	
+	padding:13px;
+	background-color:#f3f3f3;
+	font-weight: bold;
+ 
+ }
+ 
+ 
+ #headLineBottom
+{
+	border-top: 2px solid #E6E6E6;
+	padding:10px;
+}
+
+.bottomSetting
+{
+	margin-left: 20px;
+	font-size:15px;
+}
+
+
+.bottomSetting:visited
+{
+	color: #192540;
+}
