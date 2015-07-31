@@ -33,7 +33,6 @@ $comments = new Comments();
 $app->post( '/users/', function( ) use ( $users , $app) {
 	$new_user = json_decode( $app->request->getBody() , true );
 	$success = $users->addUser( $new_user );
-	 var_dump($success);
 	if( $success )
 		echo 1 ;
 	else 
