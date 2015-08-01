@@ -5,6 +5,13 @@ $app = new \Slim\Slim();
 
 require_once dirname(__FILE__) . '/../core/User.class.php'; 
 $users = new User();
+
+
+require_once dirname(__FILE__) . '/../core/Login.class.php'; 
+$login = new Login();
+
+
+
 /*
 require_once dirname(__FILE__) . '/../core/Post.class.php'; 
 $post = new Post();
@@ -32,6 +39,7 @@ $comments = new Comments();
  
 $app->post( '/users/', function( ) use ( $users , $app) {
 	$new_user = json_decode( $app->request->getBody() , true );
+	var_dump($new_user);
 	$success = $users->addUser( $new_user );
 	if( $success )
 		echo 1 ;
@@ -62,11 +70,26 @@ $app->put( '/users/', function( ) use ( $users , $app) {
 		echo 0 ;
 });
 
-
-
+$app->get( '/userslogin', function( ) use ( /*$login,*/ $app) {
+	echo "dfbdfbbf";
+	$new_usera = json_decode( $app->request->getBody()  );
+	var_dump($new_usera);
+/*
+	$userLogin = json_decode( $app->request->getBody() , true);
+	var_dump($userLogin);*/
+	/*$success = $users->updateUser( $userLogin );
+	if( $success )
+		echo 1 ;
+	else 
+		echo 0 ;*/
+});
 
 
 /*
+ * 
+ * 
+ * 
+ * 
 $app->post( '/usersInfo/', function( ) use ( $users , $app) {
 	$new_usersInfo = json_decode( $app->request->getBody() , true );
 	//var_dump($new_usersInfo);

@@ -5,7 +5,60 @@
     <head>
         <title>Sociality+</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+       	<script>
+      	 	$(document).ready(function(){
+           	
+				$( "#register" ).on("click" , "input[type=button].buttonRegister", function(){   	
+	      	 		$.ajax({
+						url: "api/users",
+						type: "post",
+						dataType: "JSON",
+						data: JSON.stringify({
+							user_firstname : $("input[name=FirstName]").val(),
+							user_lastname : $("input[name=LastName]").val(),
+							user_email : $("input[name=Email]").val(),
+							user_password : $("input[name=Password]").val()
+					}),
+						success: function( response ) {
+							console.log( response.message );
+						}
+					});
+				});
+
+
+				$( "#login" ).on("click" , "input[type=button].LOGIN", function(){   	
+				var a =	$("input[name=EmailForLogin]").val();
+				var b =	$("input[name=PasswordForLogin]").val();
+
+				console.log(a);
+				console.log(b);
+				$.ajax({
+					url: "api/userslogin",
+					type: "get",
+					dataType: "JSON",
+					data: JSON.stringify({
+						user_firstname : $("input[name=FirstName]").val(),
+						user_lastname : $("input[name=LastName]").val(),
+						user_email : $("input[name=Email]").val(),
+						user_password : $("input[name=Password]").val()
+				}),
+					success: function( response ) {
+						console.log( response.message );
+					}
+				});
+			} );
+
+
+
+
+
+				
+      	 	});	
+       	
+       	</script>
+                <link rel="stylesheet" type="text/css" href="css/style.css">
+        
     </head>
 
     <body>
@@ -29,23 +82,23 @@
                 <div id="form">
                     <div id="register">
                         <div class="error"><h3>Error</h3><span>This Username is Taken!<span></div>
-                                    <input type="text" value="First Name">
-                                    <input type="text" value="Last Name">
-                                    <input type="email" value="Email">
-                                    <input type="email" value="Email">
-                                    <input type="password" value="New Password">
-                                    <input type="date" value="Birthday">
-                                    <input type="button" value="REGISTER">
-                                    </div>	
-                                    <div id="login">
-                                        <input type="email" value="Email">
-                                        <input type="password" value="Password">
-                                        <input type="button" value="LOGIN">
-                                    </div>
-                                    </div>
-                                    </div>	
-                                    </div>
-                                    <div class="footer"><p>Copyright © 2015 T.M-Company. All rights reserved. Powered by <span>T&M</span></p></div>
-                                    </body>
+	                     	<input type="text" name="FirstName" placeholder ="Firs tName" value="">
+	                        <input type="text" name="LastName" placeholder ="LastName" value="">
+	                        <input type="email" name="Email" placeholder ="Email" value="">
+	                        <input type="password" name="Password" placeholder ="Password" value="">
+	                        <input type="password" name="rPassword" placeholder ="Password" value="">
+	                        <input type="button" class="buttonRegister" value="REGISTER">
+                                    
+         			</div>	
+                 <div id="login">
+                     <input type="email" name="EmailForLogin" placeholder ="Email" value="">
+                     <input type="password" name="PasswordForLogin" placeholder ="password" value="">
+                     <input type="button" class="LOGIN" name="LOGIN" value="LOGIN">
+                 </div>
+                 </div>
+                 </div>	
+                 </div>
+                 <div class="footer"><p>Copyright © 2015 T.M-Company. All rights reserved. Powered by <span>T&M</span></p></div>
+                 </body>
 
-                                    </html>
+                 </html>
