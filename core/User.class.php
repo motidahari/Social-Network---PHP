@@ -39,7 +39,7 @@ require_once dirname(__FILE__) . '/../lib/DB.class.php';
 		}
 		
 		public function getUser( $id ){
-			$result = $this->_db->query("SELECT * from users WHERE user_ID = ". $id ."");					
+			$result = $this->_db->query("SELECT * from users_info WHERE user_ID = ". $id ."");					
 			$users = array();
 			while ($row = mysqli_fetch_assoc ($result))
 				$users[] = $row;

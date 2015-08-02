@@ -4,8 +4,29 @@
 
     <head>
         <title>Sociality+</title>
-        <meta charset="utf-8" />
+        <meta charset="utf-8" />       
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+       	<script>
+      	 	$(document).ready(function(){
+				var id = 6 ;
+          	 		$.ajax({
+    						url: "api/users/" + id,
+    						type: "get",
+    						dataType: "JSON",
+    						complete: function( users ) {
+									console.log (users);
+							
+    						}
+    					});
+          	 	
+
+				
+
+      	});	
+      	 	</script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+
+       	
     </head>
 
     <body>

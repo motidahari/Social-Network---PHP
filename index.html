@@ -20,41 +20,34 @@
 							user_email : $("input[name=Email]").val(),
 							user_password : $("input[name=Password]").val()
 					}),
-						success: function( response ) {
+						complete: function( response ) {
 							console.log( response.message );
+								document.location.href = 'setting.html';
+					
+							
 						}
 					});
 				});
 
 
 				$( "#login" ).on("click" , "input[type=button].LOGIN", function(){   	
-				var a =	$("input[name=EmailForLogin]").val();
-				var b =	$("input[name=PasswordForLogin]").val();
-
-				console.log(a);
-				console.log(b);
 				$.ajax({
 					url: "api/userslogin",
-					type: "get",
+					type: "post",
 					dataType: "JSON",
 					data: JSON.stringify({
-						user_firstname : $("input[name=FirstName]").val(),
-						user_lastname : $("input[name=LastName]").val(),
-						user_email : $("input[name=Email]").val(),
-						user_password : $("input[name=Password]").val()
+						user_email : $("input[name=EmailForLogin]").val(),
+						user_password : $("input[name=PasswordForLogin]").val()
 				}),
-					success: function( response ) {
-						console.log( response.message );
-					}
+				complete: function( response ) {
+					console.log( response );
+						document.location.href = 'profile.html?username=moti&id=1';
+			
+					
+				}
 				});
-			} );
-
-
-
-
-
-				
-      	 	});	
+			});
+      	});	
        	
        	</script>
                 <link rel="stylesheet" type="text/css" href="css/style.css">

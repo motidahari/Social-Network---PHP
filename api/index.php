@@ -58,8 +58,12 @@ $app->delete('/users/:id', function($id) use ( $app, $users ) {
 		echo 0 ;
 });
 $app->get('/users/:id', function( $id ) use ( $app, $users ) {
-	echo json_encode( $users->getUser( $id ) );
+	 $userObject =  $users->getUser( $id ) ;
+	 $user = $userObject['0'];
+	 var_dump($user);
+	 return $user;
 });
+
 $app->put( '/users/', function( ) use ( $users , $app) {
 	$updateUser = json_decode( $app->request->getBody() , true );
 	//var_dump($updateUser);
@@ -70,18 +74,17 @@ $app->put( '/users/', function( ) use ( $users , $app) {
 		echo 0 ;
 });
 
-$app->get( '/userslogin', function( ) use ( /*$login,*/ $app) {
-	echo "dfbdfbbf";
-	$new_usera = json_decode( $app->request->getBody()  );
-	var_dump($new_usera);
-/*
-	$userLogin = json_decode( $app->request->getBody() , true);
-	var_dump($userLogin);*/
-	/*$success = $users->updateUser( $userLogin );
+$app->post( '/userslogin', function( ) use ( $login, $app) {
+	$userLogin = json_decode( $app->request->getBody() , true );
+	var_dump($userLogin);
+	$success = $login->match( $userLogin );
 	if( $success )
-		echo 1 ;
-	else 
-		echo 0 ;*/
+			$SESSION = $_SESSION["user_id"];
+		echo  $SESSION ;
+	
+
+	/*$aaa = $_SESSION	;
+	echo 	$aaa;*/
 });
 
 
